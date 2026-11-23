@@ -10,11 +10,13 @@
 
 中文回退到 Noto / 思源，再没有就用系统字体。
 
-## 字体
+## 自带字体
 
-插件**不含字体文件**——这三款是 Anthropic 的专有字体，需自行安装。Windows 双击 `.ttf` 安装，装完刷新页面。
+三款字体已用 base64 内联在 `lib/client.js` 里，**装上插件就能用，不需要在系统里另外装字体**。
 
-没装也不报错，只是会回退到后面的字体。
+`fonts/` 目录里的 `.ttf` 是同一批文件的原始副本，方便你自己安装到系统（在别的软件里也能用）。
+
+> DSH 的插件资源路由只支持 svg/png/webp/jpg，不提供字体格式，所以字体只能以 `data:` URI 嵌进样式表。
 
 ## 安装
 
@@ -47,8 +49,11 @@ cd ~/.dsh/profiles/desktop && pnpm install
 
 ```js
 document.documentElement.getAttribute('data-claude-fonts')  // "on"
+document.fonts.check('16px "Anthropic Sans Web Text"')      // true
 ```
 
 ## 许可
 
-MIT。字体归 Anthropic 所有，不在本许可范围内。
+代码 MIT。
+
+字体是 Anthropic 的专有字体，权利归 Anthropic 所有，不在 MIT 范围内。仓库内的字体文件仅为本插件使用，请勿再分发。

@@ -3,7 +3,3 @@ pnpm-lock.yaml
 *.log
 .DS_Store
 Thumbs.db
-*.ttf
-*.otf
-*.woff
-*.woff2
