@@ -1,0 +1,4 @@
+# dsh-claude-fonts bundle patch: inserts this plugin into the web roster.
+- insert:
+    - id: dsh-claude-fonts
+      name: 'dsh-claude-fonts'
